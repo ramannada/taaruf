@@ -1,0 +1,34 @@
+model
+    BaseModel
+    CiriFisik
+    Dipoligami
+    Keseharian
+    Kota
+    LatarBelakang
+    Negara
+    Poligami
+    Profile
+    Provinsi
+    User
+
+Api
+    CiriFisik
+        create
+        read
+        update
+        delete
+    Keseharian
+        create
+        read
+        update
+        delete
+    Profile
+        create
+        read
+        update
+        delete
+    user (fitur foto belum bisa)
+        create
+        read
+        update
+        delete

@@ -1,0 +1,19 @@
+{% extends 'templates/app.twig' %}
+
+{% block title %} Data Users {% endblock %}
+{% block content %}
+	<table class="table table-striped">
+			<tr>
+				<th>Username</th>
+				<th>Nama</th>
+				<th>Email</th>
+			</tr>
+		{% for data in show %}
+			<tr> 
+				<td><a href="{{ data.username }}">{{ data.username }}</td>
+				<td>{{ data.name}}</td>
+				<td>{{ data.email}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
