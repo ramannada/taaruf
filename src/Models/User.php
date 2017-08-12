@@ -7,7 +7,7 @@ class User extends BaseModel
 	protected $table = 'user';
 	protected $column = [
         'id','username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'foto',
-        'foto_ktp', 'last_online', 'accepted_by', 'rule', 'status', 'created_at', 'updated_at',
+        'foto_ktp', 'last_online', 'accepted_by', 'role', 'status', 'created_at', 'updated_at',
     ];
 
 	public function register(array $data)
@@ -18,7 +18,7 @@ class User extends BaseModel
 			'email'		=> $data['email'],
             'foto' => $data['foto'],
             'foto_ktp' => $data['foto_ktp'],
-            'rule' => 0,
+            'role' => 0,
             'status' => 0,
 			];
 		$this->create($data);
@@ -34,7 +34,7 @@ class User extends BaseModel
 			'email'		=> $data['email'],
             'foto' => $data['foto'],
             'foto_ktp' => $data['foto_ktp'],
-            'rule' => 0,
+            'role' => 0,
             'status' => 0,
             'updated_at' => date("Y-m-d H:i:s"),
 		];

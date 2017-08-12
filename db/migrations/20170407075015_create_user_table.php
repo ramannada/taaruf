@@ -25,15 +25,27 @@ class CreateUserTable extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
+    public function up()
     {
-        $user = $this->table('users');
+        $user = $this->table('user');
         $user->addColumn('username', 'string')
+             ->addColumn('auth','string')
              ->addColumn('email', 'string')
              ->addColumn('password', 'string')
-             ->addColumn('update_at', 'timestamp')
+             ->addColumn('password_reset_token', 'string')
+             ->addColumn('photo', 'string')
+             ->addColumn('ktp', 'string')
+             ->addColumn('role', 'integer', ['limit' => 3, 'default' => 0])
+             ->addColumn('status', 'integer')
+             ->addColumn('accepted_by', 'integer')
+             ->addColumn('last_online', 'datetime')
+             ->addColumn('update_at', 'datetime')
              ->addColumn('create_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
              ->addColumn('deleted', 'integer', ['limit' => 1, 'default' => 0])
+             ->addIndex(['username', 'email'], ['unique' => true])
              ->create();
+
     }
+
+
 }
